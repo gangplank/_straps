@@ -13,7 +13,7 @@
  *
  * @since _straps 1.2
  */
-function _strapstraps_customize_register( $wp_customize ) {
+function _straps_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 }
@@ -24,7 +24,7 @@ add_action( 'customize_register', '_straps_customize_register' );
  *
  * @since _straps 1.2
  */
-function _strapstraps_customize_preview_js() {
+function _straps_customize_preview_js() {
 	wp_enqueue_script( '_straps_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20120827', true );
 }
 add_action( 'customize_preview_init', '_straps_customize_preview_js' );

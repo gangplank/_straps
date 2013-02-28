@@ -13,7 +13,7 @@
  *
  * @since _straps 1.0
  */
-function _strapstraps_page_menu_args( $args ) {
+function _straps_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
@@ -24,7 +24,7 @@ add_filter( 'wp_page_menu_args', '_straps_page_menu_args' );
  *
  * @since _straps 1.0
  */
-function _strapstraps_body_classes( $classes ) {
+function _straps_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -39,7 +39,7 @@ add_filter( 'body_class', '_straps_body_classes' );
  *
  * @since _straps 1.0
  */
-function _strapstraps_enhanced_image_navigation( $url, $id ) {
+function _straps_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
 
@@ -56,7 +56,7 @@ add_filter( 'attachment_link', '_straps_enhanced_image_navigation', 10, 2 );
  *
  * @since _straps 1.1
  */
-function _strapstraps_wp_title( $title, $sep ) {
+function _straps_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() )

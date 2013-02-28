@@ -14,7 +14,7 @@ if ( ! function_exists( '_straps_content_nav' ) ) :
  *
  * @since _straps 1.0
  */
-function _strapstraps_content_nav( $nav_id ) {
+function _straps_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
@@ -56,7 +56,7 @@ function _strapstraps_content_nav( $nav_id ) {
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
-endif; // _strapstraps_content_nav
+endif; // _straps_content_nav
 
 if ( ! function_exists( '_straps_comment' ) ) :
 /**
@@ -66,7 +66,7 @@ if ( ! function_exists( '_straps_comment' ) ) :
  *
  * @since _straps 1.0
  */
-function _strapstraps_comment( $comment, $args, $depth ) {
+function _straps_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -112,7 +112,7 @@ function _strapstraps_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for _strapstraps_comment()
+endif; // ends check for _straps_comment()
 
 if ( ! function_exists( '_straps_posted_on' ) ) :
 /**
@@ -120,7 +120,7 @@ if ( ! function_exists( '_straps_posted_on' ) ) :
  *
  * @since _straps 1.0
  */
-function _strapstraps_posted_on() {
+function _straps_posted_on() {
 	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', '_straps' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -138,7 +138,7 @@ endif;
  *
  * @since _straps 1.0
  */
-function _strapstraps_categorized_blog() {
+function _straps_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
 		$all_the_cool_cats = get_categories( array(
@@ -152,20 +152,20 @@ function _strapstraps_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so _strapstraps_categorized_blog should return true
+		// This blog has more than 1 category so _straps_categorized_blog should return true
 		return true;
 	} else {
-		// This blog has only 1 category so _strapstraps_categorized_blog should return false
+		// This blog has only 1 category so _straps_categorized_blog should return false
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in _strapstraps_categorized_blog
+ * Flush out the transients used in _straps_categorized_blog
  *
  * @since _straps 1.0
  */
-function _strapstraps_category_transient_flusher() {
+function _straps_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }

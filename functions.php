@@ -29,7 +29,7 @@ if ( ! function_exists( '_straps_setup' ) ) :
  *
  * @since _straps 1.0
  */
-function _strapstraps_setup() {
+function _straps_setup() {
 
 	/**
 	 * Custom template tags for this theme.
@@ -81,7 +81,7 @@ function _strapstraps_setup() {
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 }
-endif; // _strapstraps_setup
+endif; // _straps_setup
 add_action( 'after_setup_theme', '_straps_setup' );
 
 /**
@@ -96,7 +96,7 @@ add_action( 'after_setup_theme', '_straps_setup' );
  *
  * Hooks into the after_setup_theme action.
  */
-function _strapstraps_register_custom_background() {
+function _straps_register_custom_background() {
 	$args = array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
@@ -120,7 +120,7 @@ add_action( 'after_setup_theme', '_straps_register_custom_background' );
  *
  * @since _straps 1.0
  */
-function _strapstraps_widgets_init() {
+function _straps_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar', '_straps' ),
 		'id' => 'sidebar-1',
@@ -135,7 +135,12 @@ add_action( 'widgets_init', '_straps_widgets_init' );
 /**
  * Enqueue scripts and styles
  */
-function _strapstraps_scripts() {
+function _straps_scripts() {
+	// Enqueue Bootstrap
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', null, '2.3.0', true );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() .'/layputs/bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri() .'/layputs/bootstrap-responsive.min.css' );
+
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', null, '20120206', true );

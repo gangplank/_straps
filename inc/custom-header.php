@@ -27,13 +27,13 @@
  *
  * @todo Rework this function to remove WordPress 3.4 support when WordPress 3.6 is released.
  *
- * @uses _strapstraps_header_style()
- * @uses _strapstraps_admin_header_style()
- * @uses _strapstraps_admin_header_image()
+ * @uses _straps_header_style()
+ * @uses _straps_admin_header_style()
+ * @uses _straps_admin_header_image()
  *
  * @package _straps
  */
-function _strapstraps_custom_header_setup() {
+function _straps_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
 		'default-text-color'     => '000',
@@ -90,11 +90,11 @@ if ( ! function_exists( '_straps_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see _strapstraps_custom_header_setup().
+ * @see _straps_custom_header_setup().
  *
  * @since _straps 1.0
  */
-function _strapstraps_header_style() {
+function _straps_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
@@ -125,17 +125,17 @@ function _strapstraps_header_style() {
 	</style>
 	<?php
 }
-endif; // _strapstraps_header_style
+endif; // _straps_header_style
 
 if ( ! function_exists( '_straps_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see _strapstraps_custom_header_setup().
+ * @see _straps_custom_header_setup().
  *
  * @since _straps 1.0
  */
-function _strapstraps_admin_header_style() {
+function _straps_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -155,17 +155,17 @@ function _strapstraps_admin_header_style() {
 	</style>
 <?php
 }
-endif; // _strapstraps_admin_header_style
+endif; // _straps_admin_header_style
 
 if ( ! function_exists( '_straps_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see _strapstraps_custom_header_setup().
+ * @see _straps_custom_header_setup().
  *
  * @since _straps 1.0
  */
-function _strapstraps_admin_header_image() { ?>
+function _straps_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
 		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
@@ -181,4 +181,4 @@ function _strapstraps_admin_header_image() { ?>
 		<?php endif; ?>
 	</div>
 <?php }
-endif; // _strapstraps_admin_header_image
+endif; // _straps_admin_header_image

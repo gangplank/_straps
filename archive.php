@@ -80,7 +80,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php _strapstraps_content_nav( 'nav-below' ); ?>
+				<?php _straps_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 
