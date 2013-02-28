@@ -138,8 +138,8 @@ add_action( 'widgets_init', '_straps_widgets_init' );
 function _straps_scripts() {
 	// Enqueue Bootstrap
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', null, '2.3.0', true );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() .'/layputs/bootstrap.min.css' );
-	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri() .'/layputs/bootstrap-responsive.min.css' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() .'/layouts/bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri() .'/layouts/bootstrap-responsive.min.css' );
 
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
