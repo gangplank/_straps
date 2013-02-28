@@ -16,7 +16,7 @@
 			<?php do_action( '_straps_credits' ); ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_straps' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', '_straps' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', '_straps' ), '_straps', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', '_straps' ), '_straps', '<a href="http://vuurr.com/" rel="designer">Vuurr</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
