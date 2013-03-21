@@ -40,7 +40,7 @@
 						$args['container'] = '';
 						$args['container_class'] = '';
 						$args['menu_class'] = 'main-menu';
-						$args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
+						$args['items_wrap'] = '%3$s';
 						$args['walker'] = new menu_walker();
 						wp_nav_menu($args)
 					?>
