@@ -35,7 +35,8 @@
 			</button>
 			<a class="brand" href="#">_straps</a>
 			<div class="nav-collapse collapse">
-					<?
+				<ul class="nav">
+				<?
 						$args['container'] = '';
 						$args['container_class'] = '';
 						$args['menu_class'] = 'main-menu';
@@ -43,6 +44,7 @@
 						$args['walker'] = new menu_walker();
 						wp_nav_menu($args)
 					?>
+				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
