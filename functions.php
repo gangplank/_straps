@@ -164,7 +164,7 @@ add_action( 'wp_enqueue_scripts', '_straps_scripts' );
 //require( get_template_directory() . '/inc/custom-header.php' );
 class menu_walker extends Walker_Nav_Menu
 {
-      function start_el(&$output, $item, $depth, $args)
+      function start_el(&$output, $item, $depth, $args = array())
       {
            global $wp_query;
            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -196,12 +196,17 @@ class menu_walker extends Walker_Nav_Menu
                      $description = $append = $prepend = "";
            }
 
-            $item_output = $args->before;
-            $item_output .= '<a'. $attributes .'>';
-            $item_output .= $args->link_before .$prepend.apply_filters( 'the_title', $item->title, $item->ID ).$append;
-            $item_output .= $description.$args->link_after;
-            $item_output .= '</a>';
-            $item_output .= $args->after;
+			if (!empty($args)) {
+				$item_output = !empty($args->before)? $args->before : '';
+				$item_output .= '<a'. $attributes .'>';
+				$item_output .= !empty($args->link_before)? 
+									$args->link_before . $prepend . apply_filters( 'the_title', $item->title, $item->ID ) . $append
+								:
+									$prepend . apply_filters( 'the_title', $item->title, $item->ID ).$append;
+				$item_output .= !empty($args->link_after)? $description.$args->link_after : $description;
+				$item_output .= '</a>';
+				$item_output .= !empty($args->after)? $args->after : '';
+			}
 
             $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
             }
