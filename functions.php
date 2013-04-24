@@ -169,7 +169,7 @@ class menu_walker extends Walker_Nav_Menu
            global $wp_query;
            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-           $class_names = $value = '';
+           $class_names = $value = $active = '';
 
            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
