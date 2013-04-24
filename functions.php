@@ -70,11 +70,15 @@ function _straps_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/**
-	 * This theme uses wp_nav_menu() in one location.
+	 * This theme uses wp_nav_menu() in one location by default.
+	 * Override the default navigation menu name by using:
+	 *	register_nav_menus( array( 'primary' => __( 'Your Name', 'your-theme')));
 	 */
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_straps' ),
-	) );
+	if (!has_nav_menu( 'primary' )) {	
+		register_nav_menus( array(
+			'primary' => __( 'Primary Menu', '_straps' ),
+		) );
+	}
 
 	/**
 	 * Enable support for Post Formats
