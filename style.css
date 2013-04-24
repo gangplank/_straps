@@ -20,3 +20,7 @@ Tags:
 .container {
 	width: 1000px;
 }
+
+/* Navbar + WP Admin Bar Fix: */
+.navbar-fixed-top { top: 0px; }
+body.admin-bar .navbar-fixed-top { top: 28px !important; }
