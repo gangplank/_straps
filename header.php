@@ -11,9 +11,8 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<title><?php wp_title(); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
@@ -36,13 +35,13 @@
 			<a class="brand" href="#">_straps</a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-				<?
-						$args['container'] = '';
-						$args['container_class'] = '';
-						$args['menu_class'] = 'main-menu';
-						$args['items_wrap'] = '%3$s';
-						$args['walker'] = new menu_walker();
-						wp_nav_menu($args)
+					<?php
+					$args['container'] = '';
+					$args['container_class'] = '';
+					$args['menu_class'] = 'main-menu';
+					$args['items_wrap'] = '%3$s';
+					$args['walker'] = new menu_walker();
+					wp_nav_menu($args)
 					?>
 				</ul>
 			</div><!--/.nav-collapse -->

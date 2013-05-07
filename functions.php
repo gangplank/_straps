@@ -74,7 +74,7 @@ function _straps_setup() {
 	 * Override the default navigation menu name by using:
 	 *	register_nav_menus( array( 'primary' => __( 'Your Name', 'your-theme')));
 	 */
-	if (!has_nav_menu( 'primary' )) {	
+	if (!has_nav_menu( 'primary' )) {
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', '_straps' ),
 		) );
@@ -143,19 +143,14 @@ function _straps_scripts() {
 	// Enqueue Bootstrap & jQuery
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() .'/layouts/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-responsive', get_template_directory_uri() .'/layouts/bootstrap-responsive.min.css' );
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.9.1.min.js', null, '1.9.1', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', null, '2.3.0', true );
-
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', null, '20120206', true );
-
     wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array( ), '20130115', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
@@ -203,7 +198,7 @@ class menu_walker extends Walker_Nav_Menu
 			if (!empty($args)) {
 				$item_output = !empty($args->before)? $args->before : '';
 				$item_output .= '<a'. $attributes .'>';
-				$item_output .= !empty($args->link_before)? 
+				$item_output .= !empty($args->link_before)?
 									$args->link_before . $prepend . apply_filters( 'the_title', $item->title, $item->ID ) . $append
 								:
 									$prepend . apply_filters( 'the_title', $item->title, $item->ID ).$append;
