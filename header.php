@@ -24,28 +24,28 @@
 
 <body <?php body_class(); ?>>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<button type="button" class="btn navbar-btn" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="glyphicon-bar"></span>
-				<span class="glyphicon-bar"></span>
-				<span class="glyphicon-bar"></span>
-			</button>
-			<a class="brand" href="#">_straps</a>
-			<div class="navbar-collapse collapse">
-				<ul class="nav">
-					<?php
-					$args['container'] = '';
-					$args['container_class'] = '';
-					$args['menu_class'] = 'main-menu';
-					$args['items_wrap'] = '%3$s';
-					$args['walker'] = new menu_walker();
-					wp_nav_menu($args)
-					?>
-				</ul>
-			</div><!--/.navbar-collapse -->
-		</div>
-	</div>
-</div>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">_straps</a>
+  </div>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <?php
+        $args['container'] = '';
+        $args['container_class'] = '';
+        $args['menu_class'] = 'main-menu';
+        $args['items_wrap'] = '%3$s';
+        $args['walker'] = new menu_walker();
+        wp_nav_menu($args)
+      ?>
+    </ul>
+  </div><!--/.navbar-collapse -->
+</nav>
 <div class="container">
