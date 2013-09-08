@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package _straps
- * @since _straps 1.0
+ * @since _straps 2.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -27,13 +27,13 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+			<button type="button" class="btn navbar-btn" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="glyphicon-bar"></span>
+				<span class="glyphicon-bar"></span>
+				<span class="glyphicon-bar"></span>
 			</button>
 			<a class="brand" href="#">_straps</a>
-			<div class="nav-collapse collapse">
+			<div class="navbar-collapse collapse">
 				<ul class="nav">
 					<?php
 					$args['container'] = '';
@@ -44,7 +44,7 @@
 					wp_nav_menu($args)
 					?>
 				</ul>
-			</div><!--/.nav-collapse -->
+			</div><!--/.navbar-collapse -->
 		</div>
 	</div>
 </div>

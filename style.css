@@ -4,7 +4,7 @@ Theme URI: https://github.com/vuurr/_straps
 Author: Vuurr
 Author URI: http://vuurr.com
 Description: Fork _s + Bootstrap = _straps
-Version: 1.0
+Version: 2.0
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -13,12 +13,8 @@ Tags:
 /* Top Navagastion Padding Fix */
 @media (min-width: 979px) {
 	body {
-		padding-top: 60px;
+		padding-top: 70px;
 	}
-}
-
-.container {
-	width: 1000px;
 }
 
 /* Navbar + WP Admin Bar Fix: */

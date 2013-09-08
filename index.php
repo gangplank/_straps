@@ -13,8 +13,8 @@
  */
 
 get_header(); ?>
-<div class="row-fluid">
-	<div class="span8">
+<div class="row">
+	<div class="col-lg-8">
 			<?php if ( have_posts() ) : ?>
 
 				<?php /* Start the Loop */ ?>
@@ -38,7 +38,7 @@ get_header(); ?>
 
 			<?php endif; ?>
 	</div>
-	<div class="span4">
+	<div class="col-lg-4">
 		<?php get_sidebar(); ?>
 	</div>
 </div>

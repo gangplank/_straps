@@ -7,8 +7,8 @@
  */
 
 get_header(); ?>
-<div class="row-fluid">
-	<div class="span8">
+<div class="row">
+	<div class="col-lg-8">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 	</div>
-	<div class="span4">
+	<div class="col-lg-4">
 		<?php get_sidebar(); ?>
 	</div>
 </div>
